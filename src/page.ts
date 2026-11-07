@@ -41,9 +41,13 @@ export const html = String.raw`<!DOCTYPE html>
     <a href="#services">Services</a>
     <a href="#work">Work</a>
     <a href="#process">Process</a>
+    <a href="https://discord.gg/Dsd4gZwFzz" target="_blank" rel="noopener noreferrer" class="nav-discord">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 9.5c-.7 0-1.3.8-1.3 1.8s.6 1.8 1.3 1.8 1.3-.8 1.3-1.8-.6-1.8-1.3-1.8Zm7 0c-.7 0-1.3.8-1.3 1.8s.6 1.8 1.3 1.8 1.3-.8 1.3-1.8-.6-1.8-1.3-1.8Z"/><path d="M17.7 5.3A15 15 0 0 0 14 4.2l-.3.7a11 11 0 0 0-3.4 0L10 4.2a15 15 0 0 0-3.7 1.1C3.9 9 3.2 12.6 3.5 16.2a15 15 0 0 0 4.6 2.3l.9-1.4a9.6 9.6 0 0 1-1.5-.7l.4-.3a10.7 10.7 0 0 0 8.2 0l.4.3a9.6 9.6 0 0 1-1.5.7l.9 1.4a15 15 0 0 0 4.6-2.3c.4-4.2-.6-7.8-2.8-10.9Z"/></svg>
+      Discord
+    </a>
   </nav>
 
-  <a href="#join" class="btn btn-primary btn-sm nav-cta" data-magnetic>
+  <a href="https://discord.gg/Dsd4gZwFzz" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta" data-magnetic>
     <span>Join the crew</span>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7" /></svg>
   </a>
@@ -58,7 +62,8 @@ export const html = String.raw`<!DOCTYPE html>
   <a href="#services">Services</a>
   <a href="#work">Work</a>
   <a href="#process">Process</a>
-  <a href="#join" class="mm-cta">Join the crew</a>
+  <a href="#community">Community</a>
+  <a href="https://discord.gg/Dsd4gZwFzz" target="_blank" rel="noopener noreferrer" class="mm-cta">Join the crew</a>
 </div>
 
 <main id="main">
@@ -92,8 +97,8 @@ export const html = String.raw`<!DOCTYPE html>
       </p>
 
       <div class="hero-cta reveal" data-delay="5">
-        <a href="#join" class="btn btn-primary" data-magnetic>
-          <span>Start a mission</span>
+        <a href="https://discord.gg/Dsd4gZwFzz" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-magnetic>
+          <span>Join our Discord</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7" /></svg>
         </a>
         <a href="#work" class="btn btn-ghost" data-magnetic>
@@ -214,9 +219,9 @@ export const html = String.raw`<!DOCTYPE html>
           <div class="card-ico">
             <svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>
           </div>
-          <h3>Web &amp; Metaverse</h3>
-          <p>Playable browser worlds, WebGL portals and real-time 3D that runs on a phone.</p>
-          <ul class="card-list"><li>Three.js / WebGL</li><li>Playable ads</li><li>Landing worlds</li></ul>
+          <h3>Web Development</h3>
+          <p>Fast, animated sites and playable browser worlds — from landing pages to real-time WebGL.</p>
+          <ul class="card-list"><li>Sites &amp; apps</li><li>Three.js / WebGL</li><li>Dashboards</li></ul>
           <span class="card-index">03</span>
         </article>
 
@@ -245,11 +250,11 @@ export const html = String.raw`<!DOCTYPE html>
         <article class="card reveal" data-tilt data-delay="2">
           <div class="card-glow"></div>
           <div class="card-ico">
-            <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4.5h-4.5"/><path d="M8 12h8M12 8v8"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M8.5 9.5c-.7 0-1.3.8-1.3 1.8s.6 1.8 1.3 1.8 1.3-.8 1.3-1.8-.6-1.8-1.3-1.8Zm7 0c-.7 0-1.3.8-1.3 1.8s.6 1.8 1.3 1.8 1.3-.8 1.3-1.8-.6-1.8-1.3-1.8Z"/><path d="M17.7 5.3A15 15 0 0 0 14 4.2l-.3.7a11 11 0 0 0-3.4 0L10 4.2a15 15 0 0 0-3.7 1.1C3.9 9 3.2 12.6 3.5 16.2a15 15 0 0 0 4.6 2.3l.9-1.4a9.6 9.6 0 0 1-1.5-.7l.4-.3a10.7 10.7 0 0 0 8.2 0l.4.3a9.6 9.6 0 0 1-1.5.7l.9 1.4a15 15 0 0 0 4.6-2.3c.4-4.2-.6-7.8-2.8-10.9Z"/></svg>
           </div>
-          <h3>Prototyping Sprints</h3>
-          <p>Two weeks, one playable build. Find out if the idea is magic before you fund the year.</p>
-          <ul class="card-list"><li>2-week sprint</li><li>Playtest report</li><li>Go / no-go</li></ul>
+          <h3>Discord Bot Development</h3>
+          <p>Custom bots with slash commands, moderation, tickets, music and dashboards your server will love.</p>
+          <ul class="card-list"><li>Slash commands</li><li>Moderation</li><li>Dashboards</li></ul>
           <span class="card-index">06</span>
         </article>
       </div>
@@ -442,6 +447,89 @@ export const html = String.raw`<!DOCTYPE html>
     </div>
   </section>
 
+  <!-- ══════════════ COMMUNITY ══════════════ -->
+  <section class="section community" id="community">
+    <div class="wrap">
+      <header class="section-head center">
+        <p class="eyebrow reveal"><span class="tick"></span> THE SIGNAL</p>
+        <h2 class="section-title reveal" data-delay="1">Come hang out in <span class="grad-text">orbit</span></h2>
+        <p class="section-sub reveal" data-delay="2">
+          Our Discord is where the crew actually lives — bot development, web development,
+          playtests, job drops and zero-gravity shitposting.
+        </p>
+      </header>
+
+      <div class="community-grid">
+        <a class="discord-card reveal" data-delay="1" href="https://discord.gg/Dsd4gZwFzz" target="_blank" rel="noopener noreferrer" data-tilt>
+          <span class="dc-glow"></span>
+          <div class="dc-head">
+            <span class="dc-icon">
+              <img src="https://cdn.discordapp.com/icons/1421455698050682942/934fb84da599707791c604c05edaa04b.png?size=128" alt="COSMIC CREW Discord server icon" width="56" height="56" loading="lazy" />
+            </span>
+            <div class="dc-id">
+              <strong>COSMIC CREW</strong>
+              <span>Official Discord server</span>
+            </div>
+          </div>
+
+          <div class="dc-stats">
+            <div class="dc-stat"><b id="dcMembers">74</b><span>members</span></div>
+            <div class="dc-stat"><b id="dcOnline">32</b><span>online now</span></div>
+            <div class="dc-stat"><b>24/7</b><span>chatter</span></div>
+          </div>
+
+          <ul class="dc-chips">
+            <li>Discord bot development</li>
+            <li>Web development</li>
+            <li>Playtest nights</li>
+            <li>Hiring drops</li>
+          </ul>
+
+          <span class="dc-cta">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 9.5c-.7 0-1.3.8-1.3 1.8s.6 1.8 1.3 1.8 1.3-.8 1.3-1.8-.6-1.8-1.3-1.8Zm7 0c-.7 0-1.3.8-1.3 1.8s.6 1.8 1.3 1.8 1.3-.8 1.3-1.8-.6-1.8-1.3-1.8Z"/><path d="M17.7 5.3A15 15 0 0 0 14 4.2l-.3.7a11 11 0 0 0-3.4 0L10 4.2a15 15 0 0 0-3.7 1.1C3.9 9 3.2 12.6 3.5 16.2a15 15 0 0 0 4.6 2.3l.9-1.4a9.6 9.6 0 0 1-1.5-.7l.4-.3a10.7 10.7 0 0 0 8.2 0l.4.3a9.6 9.6 0 0 1-1.5.7l.9 1.4a15 15 0 0 0 4.6-2.3c.4-4.2-.6-7.8-2.8-10.9Z"/></svg>
+            <span>Join discord.gg/Dsd4gZwFzz</span>
+            <svg class="dc-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <div class="ceo-card reveal" data-delay="2" data-tilt>
+          <div class="ceo-top">
+            <span class="ceo-badge">CEO</span>
+            <span class="ceo-live"><i></i>verified owner</span>
+          </div>
+
+          <div class="ceo-body">
+            <span class="ceo-avatar">
+              <img
+                src="https://cdn.discordapp.com/avatars/1318900766307647600/cd5fe99d4a6b0b5f442764df6a7ceb68.png?size=256"
+                alt="SHADOW — CEO of Cosmic Crew Development"
+                width="96" height="96" loading="lazy"
+                id="ceoAvatar" />
+              <span class="ceo-ring"></span>
+            </span>
+            <div class="ceo-name">
+              <strong>SHADOW</strong>
+              <span class="ceo-handle">@dark_king028</span>
+            </div>
+          </div>
+
+          <p class="ceo-role">Founder &amp; CEO — Cosmic Crew Development</p>
+
+          <div class="ceo-tags">
+            <span>Discord bot development</span>
+            <span>Web development</span>
+          </div>
+
+          <a class="ceo-link" href="https://discord.com/users/1318900766307647600" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
+            View Discord profile
+            <svg class="dc-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════════════ CTA BAND ══════════════ -->
   <section class="cta-band">
     <div class="cta-inner reveal">
@@ -477,11 +565,22 @@ export const html = String.raw`<!DOCTYPE html>
       </div>
       <div>
         <h4>Signal</h4>
-        <a href="#join">Contact</a>
-        <a href="#top">Discord</a>
-        <a href="#top">Newsletter</a>
+        <a href="https://discord.gg/Dsd4gZwFzz" target="_blank" rel="noopener noreferrer">Discord server ↗</a>
+        <a href="https://discord.com/users/1318900766307647600" target="_blank" rel="noopener noreferrer">CEO profile ↗</a>
+        <a href="#join">Apply to join</a>
       </div>
     </nav>
+  </div>
+
+  <div class="wrap footer-social">
+    <a href="https://discord.gg/Dsd4gZwFzz" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Join the COSMIC CREW Discord server">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 9.5c-.7 0-1.3.8-1.3 1.8s.6 1.8 1.3 1.8 1.3-.8 1.3-1.8-.6-1.8-1.3-1.8Zm7 0c-.7 0-1.3.8-1.3 1.8s.6 1.8 1.3 1.8 1.3-.8 1.3-1.8-.6-1.8-1.3-1.8Z"/><path d="M17.7 5.3A15 15 0 0 0 14 4.2l-.3.7a11 11 0 0 0-3.4 0L10 4.2a15 15 0 0 0-3.7 1.1C3.9 9 3.2 12.6 3.5 16.2a15 15 0 0 0 4.6 2.3l.9-1.4a9.6 9.6 0 0 1-1.5-.7l.4-.3a10.7 10.7 0 0 0 8.2 0l.4.3a9.6 9.6 0 0 1-1.5.7l.9 1.4a15 15 0 0 0 4.6-2.3c.4-4.2-.6-7.8-2.8-10.9Z"/></svg>
+      <span>discord.gg/Dsd4gZwFzz</span>
+    </a>
+    <a href="https://discord.com/users/1318900766307647600" target="_blank" rel="noopener noreferrer" class="social-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
+      <span>CEO · @dark_king028</span>
+    </a>
   </div>
   <div class="wrap footer-bottom">
     <span>© <span id="year">2026</span> Cosmic Crew Development. All orbits reserved.</span>

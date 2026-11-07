@@ -58,10 +58,30 @@ Designed around the supplied astronaut logo (ember orange / nebula purple / warm
 | `GET` | `/` | — | The full site (server-rendered HTML) |
 | `POST` | `/api/apply` | JSON: `name`, `email`, `role`, `link?`, `message` | `{ ok: true, id }` or `{ ok: false, error }` |
 | `GET` | `/api/stats` | — | `{ applications: number }` |
+| `GET` | `/api/discord` | — | `{ ok, name, members, online, invite, live }` |
 | `GET` | `/api/health` | — | `{ ok: true, service }` |
 
 **Validation**: server re-validates every field (name ≤120, RFC-ish email ≤200, role ≤80, message ≤4000)
 and returns proper `400`s. The client mirrors this with inline field errors.
+
+### `/api/discord`
+
+Fetches live member/online counts from the public Discord invite API (`Dsd4gZwFzz`).
+
+- Edge-cached for **5 minutes** (`caches.default`) to stay well inside Discord's rate limits
+- Falls back to hardcoded counts (`74` members / `32` online) if the fetch fails — the page never shows a blank
+- The HTML ships with those same numbers pre-rendered, so stats are visible before JS runs
+
+## Community & Social
+
+| Link | Where it appears |
+|---|---|
+| `https://discord.gg/Dsd4gZwFzz` (COSMIC CREW server) | Nav, header CTA, hero button, mobile menu, community card, footer |
+| `https://discord.com/users/1318900766307647600` (CEO `@dark_king028` / SHADOW) | Community card, footer |
+
+- **Community section** (`#community`) — Discord server card with live stats, member counts and topic chips,
+  plus a CEO profile card using the real Discord avatar from the CDN
+- The server icon and CEO avatar are loaded from `cdn.discordapp.com` (verified 200, PNG)
 
 ## Data Architecture
 

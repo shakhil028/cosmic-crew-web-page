@@ -410,4 +410,36 @@
     }, { threshold: 0.4, rootMargin: '-20% 0px -40% 0px' });
     sections.forEach((s) => sio.observe(s));
   }
+
+  /* ───── live Discord server stats ───── */
+  const dcMembers = document.getElementById('dcMembers');
+  const dcOnline = document.getElementById('dcOnline');
+
+  if (dcMembers || dcOnline) {
+    const setNum = (el, value) => {
+      if (!el || typeof value !== 'number' || !isFinite(value)) return;
+      const from = parseInt(el.textContent, 10) || 0;
+      if (reduce || from === value) { el.textContent = String(value); return; }
+      const dur = 900;
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = String(Math.round(from + (value - from) * eased));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    fetch('/api/discord')
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('bad status'))))
+      .then((d) => {
+        if (!d || d.ok === false) return;
+        setNum(dcMembers, d.members);
+        setNum(dcOnline, d.online);
+      })
+      .catch(() => {
+        /* keep the server-rendered fallback numbers — never show a blank */
+      });
+  }
 })();

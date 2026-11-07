@@ -93,6 +93,63 @@ app.get('/api/stats', async (c) => {
 
 app.get('/api/health', (c) => c.json({ ok: true, service: 'cosmic-crew-development' }))
 
+/* ───────── live Discord server stats ───────── */
+const DISCORD_INVITE = 'Dsd4gZwFzz'
+
+// Server-side static fallback (also mirrored in the HTML so the page never shows a blank)
+const DISCORD_FALLBACK = { name: 'COSMIC CREW', members: 74, online: 32 }
+
+app.get('/api/discord', async (c) => {
+  const cache = caches.default
+  const cacheKey = new Request('https://cosmiccrew.internal/discord-stats')
+
+  // Serve from edge cache when warm (5 min) to stay well inside Discord's rate limits
+  const hit = await cache.match(cacheKey)
+  if (hit) return hit
+
+  try {
+    const res = await fetch(
+      `https://discord.com/api/v9/invites/${DISCORD_INVITE}?with_counts=true`,
+      { headers: { 'User-Agent': 'CosmicCrewSite/1.0' } }
+    )
+
+    if (!res.ok) throw new Error(`Discord responded ${res.status}`)
+
+    const data = (await res.json()) as {
+      guild?: { name?: string; icon?: string | null }
+      approximate_member_count?: number
+      approximate_presence_count?: number
+    }
+
+    const payload = {
+      ok: true,
+      name: data.guild?.name ?? DISCORD_FALLBACK.name,
+      members: data.approximate_member_count ?? DISCORD_FALLBACK.members,
+      online: data.approximate_presence_count ?? DISCORD_FALLBACK.online,
+      invite: `https://discord.gg/${DISCORD_INVITE}`,
+      live: true
+    }
+
+    const response = c.json(payload, 200, {
+      'Cache-Control': 'public, max-age=300',
+      'Access-Control-Allow-Origin': '*'
+    })
+    try {
+      c.executionCtx.waitUntil(cache.put(cacheKey, response.clone()))
+    } catch {
+      // no ExecutionContext (e.g. some dev runtimes) — skip caching, still return data
+    }
+    return response
+  } catch (err) {
+    console.error('Discord stats fetch failed:', err)
+    return c.json(
+      { ok: true, ...DISCORD_FALLBACK, invite: `https://discord.gg/${DISCORD_INVITE}`, live: false },
+      200,
+      { 'Cache-Control': 'public, max-age=60' }
+    )
+  }
+})
+
 app.notFound((c) => c.json({ ok: false, error: 'Not found' }, 404))
 
 export default app
