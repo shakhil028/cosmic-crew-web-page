@@ -12,10 +12,11 @@ Designed around the supplied astronaut logo (ember orange / nebula purple / warm
 - **Vibe**: Deep-space, holographic, cinematic — animated but never noisy.
 - **Stack**: Hono + TypeScript on Cloudflare Pages, vanilla CSS/JS (no framework, no build bloat).
 
-## Live Preview (sandbox)
+## Links
 
+- **GitHub**: https://github.com/shakhil028/cosmic-crew-web-page
 - **Local**: http://localhost:3000
-- **Public**: the sandbox service URL for port 3000 (see `GetServiceUrl`)
+- **Public preview**: the sandbox service URL for port 3000
 
 ## Features (currently completed)
 
